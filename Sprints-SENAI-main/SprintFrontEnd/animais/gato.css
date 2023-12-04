@@ -60,8 +60,7 @@ body {
     transition: 0.30s;
 }
 
-.navegar:hover,
-.navegar2:hover {
+.navegar:hover, .navegar2:hover {
     color: #FCB212;
 }
 
@@ -75,7 +74,7 @@ body {
 }
 
 .barra {
-    height: 35px;
+    height: 35px;   
     width: 500px;
     border: none;
     border-top: #b6b5b5 solid 2px;
@@ -129,6 +128,7 @@ body {
     z-index: 2; /
 }
 
+/* Estilo do contêiner dos cards */
 #container1,
 #container2,
 #container3 {
@@ -136,6 +136,98 @@ body {
     z-index: 1; /
 }
 
+.racoesEpetiscos, .brinquedos, .acessorios, .conforto {
+    margin-top: 115px;
+    display: flex;
+    justify-content: center;
+}
+
+.conforto {
+    margin-bottom: 70px;
+}
+
+.card {
+    width: 170px;
+    height: 350px;
+    border: solid 2px #d4d4d4;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.card:not(:last-child) {
+    margin-right: 75px;
+}
+
+.card .cardImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .cardImg img {
+    width: 170px;
+    height: 195px;
+    border-top-right-radius: 7.5px;
+    border-top-left-radius: 7.5px;
+}
+
+.card .cardBody .cardTitulo, .cardPreco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .cardBody .cardTitulo p{
+    font-family: 'Lilita One', sans-serif;
+}
+
+.card .cardBody .cardPreco p{
+    font-family: 'Lilita One', sans-serif;
+}
+
+.card .cardBody .cardBotao {
+    display: flex;
+    justify-content: center;
+}
+
+.cardBotao button {
+    border: solid 1px #027674; 
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    font-size: 17px;
+    font-weight: 600;
+    background: #01bbb9;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.32s; 
+}
+
+.cardBotao button:hover {
+    background: #FCB212;
+    border: solid 1px #ab790d;
+}
+
+/* -----------------------  XXXXXX ----------------------- */
+
+/* ----------------------- CARDS ----------------------- */
+
+.tituloCards {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 50px; 
+    font-family: 'Bevan', serif;
+    margin-bottom: 20px;
+    z-index: 2; /
+}
+
+#container1,
+#container2,
+#container3 {
+    position: relative;
+    z-index: 1; /
+}
 
 .racoesEpetiscos, .brinquedos, .acessorios, .conforto {
     margin-top: 115px;
@@ -212,103 +304,13 @@ body {
 
 /* -----------------------  XXXXXX ----------------------- */
 
-/* ----------------------- CARDS ----------------------- */
-
-.tituloCards {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    top: 100px;
-    font-family: 'Bevan', serif;
-}
-
-.racoesEpetiscos,
-.brinquedos,
-.acessorios,
-.conforto {
-    margin-top: 115px;
-    display: flex;
-    justify-content: center;
-}
-
-.conforto {
-    margin-bottom: 70px;
-}
-
-.card {
-    width: 190px;
-    height: 350px;
-    border: solid 2px #d4d4d4;
-    background-color: #ffffff;
-    border-radius: 10px;
-}
-
-.card:not(:last-child) {
-    margin-right: 75px;
-}
-
-.card .cardImg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card .cardImg img {
-    width: 120px;
-    height: 200px;
-    margin-top: 2px;
-    border-top-right-radius: 7.5px;
-    border-top-left-radius: 7.5px;
-}
-
-.card .cardBody .cardTitulo,
-.cardPreco {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card .cardBody .cardTitulo p {
-    font-family: 'Lilita One', sans-serif;
-}
-
-.card .cardBody .cardPreco p {
-    font-family: 'Lilita One', sans-serif;
-}
-
-.card .cardBody .cardBotao {
-    display: flex;
-    justify-content: center;
-}
-
-.cardBotao button {
-    border: solid 1px #027674;
-    border-radius: 10px;
-    width: 100px;
-    height: 30px;
-    font-size: 17px;
-    font-weight: 600;
-    background: #01bbb9;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.32s;
-}
-
-.cardBotao button:hover {
-    background: #FCB212;
-    border: solid 1px #ab790d;
-}
-
-/* -----------------------  XXXXXX ----------------------- */
-
 
 /* CSS dos Carrosséis de Cards */
 
 /* CSS para o carrossel 1 */
 
 #container1 {
-    height: auto;
-    /* Altere a altura conforme necessário ou remova para que a altura seja ajustada automaticamente */
+    height: auto; /* Altere a altura conforme necessário ou remova para que a altura seja ajustada automaticamente */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -338,10 +340,8 @@ body {
 }
 
 #slider-container1 #slider1 .slide img {
-    max-width: 100%;
-    /* Certifique-se de que a imagem não ultrapasse o tamanho do contêiner */
-    max-height: 100%;
-    /* Certifique-se de que a imagem não ultrapasse o tamanho do contêiner */
+    max-width: 100%; /* Certifique-se de que a imagem não ultrapasse o tamanho do contêiner */
+    max-height: 100%; /* Certifique-se de que a imagem não ultrapasse o tamanho do contêiner */
 }
 
 #slider-container1 .btn {
@@ -376,7 +376,7 @@ body {
 #slider-container1 #slider1 {
     display: flex;
     width: 1000%;
-    height: 100%;
+    height: 100%; 
     transition: all .5s;
 }
 
@@ -420,8 +420,7 @@ body {
 /* CSS para o segundo carrossel */
 
 #container2 {
-    height: auto;
-    /* Ajuste conforme necessário ou remova para altura automática */
+    height: auto; /* Ajuste conforme necessário ou remova para altura automática */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -486,7 +485,7 @@ body {
 #slider-container2 #slider2 {
     display: flex;
     width: 1000%;
-    height: 100%;
+    height: 100%; 
     transition: all .5s;
 }
 
@@ -530,8 +529,7 @@ body {
 /* CSS para o carrossel 3 */
 
 #container3 {
-    height: auto;
-    /* Ajuste conforme necessário ou remova para altura automática */
+    height: auto; /* Ajuste conforme necessário ou remova para altura automática */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -578,7 +576,7 @@ body {
 #slider-container3 #slider3 {
     display: flex;
     width: 1000%;
-    height: 100%;
+    height: 100%; 
     transition: all .5s;
 }
 
@@ -622,8 +620,7 @@ body {
 /* CSS para o carrossel 4 */
 
 #container4 {
-    height: auto;
-    /* Ajuste conforme necessário ou remova para altura automática */
+    height: auto; /* Ajuste conforme necessário ou remova para altura automática */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -721,7 +718,7 @@ body {
 
 /*estilização para o rodapé*/
 footer {
-    background-color: rgba(0, 0, 0);
+    background-color:rgba(0, 0, 0);
     width: 100%;
     bottom: 0;
     position: relative;
@@ -800,12 +797,10 @@ hr {
     color: #ffffff;
     text-decoration: none;
 }
-
 /*classe principal do footer*/
 .informacoes-adicionais {
     width: 100%;
 }
-
 /*estilizando logo Petgriffe, no footer*/
 #logo-footer {
     display: flex;
@@ -817,7 +812,6 @@ hr {
 ul {
     list-style: none;
 }
-
 /* estilizando as informações do footer como, vagas, termos de serviço etc...*/
 .informacoes-footer {
     display: flex;
@@ -825,14 +819,12 @@ ul {
     justify-content: space-around;
     padding-left: 5px;
 }
-
 /*class principal de tiktok, instagram e twiter*/
 .redes-sociais {
     display: flex;
     justify-content: flex-end;
     margin-right: 5%;
 }
-
 /*estilizando o tamanho delas*/
 #instagram {
     height: 25px;
@@ -878,3 +870,4 @@ ul {
         align-items: center;
     }
 } */
+
