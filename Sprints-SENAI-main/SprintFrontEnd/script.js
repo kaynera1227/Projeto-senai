@@ -1,84 +1,31 @@
-var container = document.getElementById('container')
-var slider = document.getElementById('slider');
-var slides = document.getElementsByClassName('slide').length;
-var buttons = document.getElementsByClassName('btn');
+// Código para o Funcionamento do Carrinho de Compras
 
+function toggleCarrinho() {
+    var carrinhoMenu = document.getElementById("carrinhoMenu");
+    carrinhoMenu.classList.toggle("active");
 
-var currentPosition = 0;
-var currentMargin = 0;
-var slidesPerPage = 0;
-var slidesCount = slides - slidesPerPage;
-var containerWidth = container.offsetWidth;
-var prevKeyActive = false;
-var nextKeyActive = true;
+    // Seleciona o elemento body
+    var body = document.querySelector("body");
 
-window.addEventListener("resize", checkWidth);
-
-function checkWidth() {
-    containerWidth = container.offsetWidth;
-    setParams(containerWidth);
+    // Toggla a classe para habilitar/desabilitar o scroll
+    body.classList.toggle("no-scroll");
 }
 
-function setParams(w) {
-    if (w < 551) {
-        slidesPerPage = 1;
-    } else {
-        if (w < 901) {
-            slidesPerPage = 2;
-        } else {
-            if (w < 1101) {
-                slidesPerPage = 3;
-            } else {
-                slidesPerPage = 4;
-            }
-        }
-    }
-    slidesCount = slides - slidesPerPage;
-    if (currentPosition > slidesCount) {
-        currentPosition -= slidesPerPage;
+let carrinhoDeCompras = [];
+
+function adicionarProduto(identificador) {
+    const produto = document.getElementById(identificador);
+    const imagem = produto.querySelector('img').src;
+    const nome = produto.querySelectorAll('p')[0].innerText;
+    const preco = produto.querySelectorAll('p')[1].innerText;
+
+    const produtoInfo = {
+        imagem: imagem,
+        nome: nome,
+        preco: preco
     };
-    currentMargin = - currentPosition * (100 / slidesPerPage);
-    slider.style.marginLeft = currentMargin + '%';
-    if (currentPosition > 0) {
-        buttons[0].classList.remove('inactive');
-    }
-    if (currentPosition < slidesCount) {
-        buttons[1].classList.remove('inactive');
-    }
-    if (currentPosition >= slidesCount) {
-        buttons[1].classList.add('inactive');
-    }
+
+    adicionarAoCarrinho(produtoInfo);
 }
 
-setParams();
-
-function slideRight() {
-    if (currentPosition != 0) {
-        slider.style.marginLeft = currentMargin + (100 / slidesPerPage) + '%';
-        currentMargin += (100 / slidesPerPage);
-        currentPosition--;
-    };
-    if (currentPosition === 0) {
-        buttons[0].classList.add('inactive');
-    }
-    if (currentPosition < slidesCount) {
-        buttons[1].classList.remove('inactive');
-    }
-};
-
-function slideLeft() {
-    if (currentPosition != slidesCount) {
-        slider.style.marginLeft = currentMargin - (100 / slidesPerPage) + '%';
-        currentMargin -= (100 / slidesPerPage);
-        currentPosition++;
-    };
-    if (currentPosition == slidesCount) {
-        buttons[1].classList.add('inactive');
-    }
-    if (currentPosition > 0) {
-        buttons[0].classList.remove('inactive');
-    }
-};
-
-
-
+// Restante do código...

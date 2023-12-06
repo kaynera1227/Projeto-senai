@@ -3,13 +3,33 @@ body {
   margin: 0;
 }
 
+body::-webkit-scrollbar,
+body::-moz-scrollbar {
+  width: 7px;
+  transition: 1s;
+}
+
+body::-webkit-scrollbar-track,
+body::-moz-scrollbar-track {
+  background: rgb(255, 255, 255);
+  border-radius: 50px;
+  transition: 1s;
+}
+
+body::-webkit-scrollbar-thumb,
+body::-moz-scrollbar-thumb {
+  background-color: #3ac9c5;
+  border-radius: 16px;
+  transition: 1s;
+}
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 15vh;
-  margin-bottom: 50px;
+  height: 14vh;
+  margin-bottom: 60px;
   background-color: #3ac9c5;
 }
 
@@ -32,15 +52,14 @@ body {
   color: #FCB212;
 }
 
-
-
-
 .cadastro {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  width: 1200px;
-  height: 465px;
+  align-items: stretch;
+  width: 90%;
+  max-width: 1200px;
+  height: auto;
   background: #eeeeee;
   border-radius: 20px;
   margin: 0 auto;
@@ -52,78 +71,48 @@ body {
 }
 
 .cadastro .imgCadastro img {
-  width: 750px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  width: 100%;
+  max-width: 750px;
+  border-radius: 20px 0 0 20px; 
 }
 
-.cadastro .formulario {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin-left: 70px;
-  width: 800px;
-  height: 465px;
-}
-
-.formulario input {
-  width: 160px;
-  height: 30px;
-  margin-top: 7px;
-  border: solid 2px #000000;
-  border-radius: 17px;
-}
-
-::placeholder {
-  color: black;
-}
-
-.formulario label {
-  font-family: 'Lilita One', sans-serif;
-}
-
-.formulario input:not(:last-child) {
-  margin-bottom: 30px;
-  width: 155px;
-}
-
-
-
+.cadastro .formulario,
 .cadastro .formulario2 {
+  flex: 1;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   margin-left: 20px;
-  width: 800px;
-  height: 465px;
 }
 
-.formulario2 input {
-  width: 160px;
+.cadastro .formulario input,
+.cadastro .formulario2 input {
+  width: 160px; 
   height: 30px;
   margin-top: 7px;
   border: solid 2px #000000;
   border-radius: 17px;
 }
 
-.formulario2 label {
+.cadastro .formulario label,
+.cadastro .formulario2 label {
   font-family: 'Lilita One', sans-serif;
 }
 
-.formulario2 input:not(:last-child) {
-  margin-bottom: 30px;
-  width: 155px;
+.cadastro .formulario input:not(:last-child),
+.cadastro .formulario2 input:not(:last-child) {
+  margin-bottom: 10px; 
 }
 
 .cadastro .formulario3 {
   position: relative;
-  top: 170px;
-  right: 250px;
-}           
+  top: 0; 
+  right: 0;
+}
 
-.enviarCadastro input{
+.enviarCadastro input {
   width: 150px;
   height: 45px;
   border-radius: 27px;
@@ -134,8 +123,10 @@ body {
   font-size: 17px;
   cursor: pointer;
   transition: 0.30s;
+  margin-top: 10px;
 }
 
 .enviarCadastro input:hover {
-   background: #41dfd9;
+  background: #41dfd9;
 }
+
